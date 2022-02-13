@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div>
-      <button style={{ backgroundColor: buttonBackgroundColor }} onClick={handleClick} disabled={checked}>{buttonText}</button>
+      <button style={{ backgroundColor: checked ? 'gray' : buttonBackgroundColor }} onClick={handleClick} disabled={checked}>{buttonText}</button>
       <input 
         type='checkbox' 
         id="disable-button-checkbox" 
