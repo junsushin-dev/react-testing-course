@@ -6,11 +6,11 @@ export function replaceCamelWithSpaces(colorName) {
 }
 
 function App() {
-  const [buttonBackgroundColor, setButtonBackgroundColor] = useState('red');
+  const [buttonBackgroundColor, setButtonBackgroundColor] = useState('MediumVioletRed');
   const [checked, setChecked] = useState(false);
 
-  const newButtonBackgroundColor = buttonBackgroundColor === 'red' ? 'blue' : 'red';
-  const buttonText = `Change to ${newButtonBackgroundColor}`;
+  const newButtonBackgroundColor = buttonBackgroundColor === 'MediumVioletRed' ? 'MidnightBlue' : 'MediumVioletRed';
+  const buttonText = `Change to ${replaceCamelWithSpaces(newButtonBackgroundColor)}`;
 
   const handleClick = () => {
     setButtonBackgroundColor(newButtonBackgroundColor);

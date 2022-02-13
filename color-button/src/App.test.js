@@ -4,27 +4,27 @@ import App, { replaceCamelWithSpaces } from './App';
 test('button has correct initial color', () => {
   render(<App />);
 
-  // find an element with a role of button and text of 'Change to blue'
-  const colorButton = screen.getByRole('button', { name: 'Change to blue' });
+  // find an element with a role of button and text of 'Change to MidnightBlue'
+  const colorButton = screen.getByRole('button', { name: 'Change to Midnight Blue' });
 
-  // expect the background color to be red
-  expect(colorButton).toHaveStyle({ backgroundColor: 'red' });
+  // expect the background color to be MediumVioletRed
+  expect(colorButton).toHaveStyle({ backgroundColor: 'MediumViolet' });
 
   // click button
   fireEvent.click(colorButton);
 
-  // expect the background color to be blue
-  expect(colorButton).toHaveStyle({ backgroundColor: 'blue' });
+  // expect the background color to be MidnightBlue
+  expect(colorButton).toHaveStyle({ backgroundColor: 'MidnightBlue' });
 
-  // expect the button text to be 'Change to red'
-  expect(colorButton.textContent).toBe('Change to red');
+  // expect the button text to be 'Change to MediumVioletRed'
+  expect(colorButton.textContent).toBe('Change to Medium Violet Red');
 });
 
 test('initial conditions', () => {
   render(<App />);
 
   // check that the button starts out enabled
-  const colorButton = screen.getByRole('button', { name: 'Change to blue'} );
+  const colorButton = screen.getByRole('button', { name: 'Change to Midnight Blue'} );
   expect(colorButton).toBeEnabled();
 
   // check that the checkbox starts out unchecked
@@ -35,7 +35,7 @@ test('initial conditions', () => {
 test('button is disabled when checkbox is checked', () => {
   render(<App />);
 
-  const colorButton = screen.getByRole('button', { name: 'Change to blue'} );
+  const colorButton = screen.getByRole('button', { name: 'Change to Midnight Blue'} );
   const checkbox = screen.getByRole('checkbox', { name: 'Disable button' });
 
   fireEvent.click(checkbox);
@@ -44,7 +44,7 @@ test('button is disabled when checkbox is checked', () => {
 
   fireEvent.click(checkbox);
   expect(colorButton).toBeEnabled();
-  expect(colorButton).toHaveStyle({ backgroundColor: 'red' });
+  expect(colorButton).toHaveStyle({ backgroundColor: 'MediumVioletRed' });
 
   fireEvent.click(colorButton);
   fireEvent.click(checkbox);
@@ -52,7 +52,7 @@ test('button is disabled when checkbox is checked', () => {
   expect(colorButton).toHaveStyle({ backgroundColor: 'gray' });
 
   fireEvent.click(checkbox);
-  expect(colorButton).toHaveStyle({ backgroundColor: 'blue' });
+  expect(colorButton).toHaveStyle({ backgroundColor: 'MidnightMidnightBlue' });
 });
 
 describe('spaces before camelCase capital letters', () => {
